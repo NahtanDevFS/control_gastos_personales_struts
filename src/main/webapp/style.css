@@ -1,0 +1,202 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+body.body-forms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.wwFormTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wwFormTable td {
+    padding: 8px 0;
+}
+
+.tdLabel {
+    text-align: left;
+    padding-right: 15px;
+    vertical-align: top;
+    padding-top: 12px;
+    font-weight: bold;
+    color: #555;
+}
+
+.wwFormTable input[type="text"],
+.wwFormTable input[type="password"],
+.wwFormTable select {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.form-link {
+    text-align: center;
+    margin-top: 1.5em;
+    color: #666;
+}
+
+.form-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.welcome-bar {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.welcome-bar a {
+    color: #00bfff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.app-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.summary-card {
+    border: 1px solid #e0e0e0;
+    padding: 1.5em;
+    margin-bottom: 2em;
+    background-color: #fdfdfd;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.summary-card .summary-item { margin: 10px; }
+.summary-card .summary-item strong { display: block; color: #555; font-size: 1em; margin-bottom: 5px; }
+.summary-card .summary-item span { font-size: 1.5em; font-weight: bold; }
+.summary-card .summary-item .income { color: #28a745; }
+.summary-card .summary-item .expense { color: #dc3545; }
+.summary-card .summary-item .balance { color: #17a2b8; }
+
+.form-section {
+    background-color: #f8f9fa;
+    padding: 1.5em;
+    border-radius: 8px;
+    margin-bottom: 2em;
+}
+.form-section h2 { margin-top: 0; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+
+.filter-form input[type="text"],
+.filter-form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95em;
+    min-width: 150px;
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.expense-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.expense-table th, .expense-table td { padding: 12px 15px; border: 1px solid #ddd; text-align: left; }
+.expense-table th { background-color: #007bff; color: white; font-weight: bold; }
+.expense-table tr:nth-child(even) { background-color: #f2f2f2; }
+.expense-table tr:hover { background-color: #e9ecef; }
+.expense-table a { color: #007bff; text-decoration: none; font-weight: bold; margin: 0 5px; }
+
+
+.text-center {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.form-group {
+    margin-bottom: 1.2em; 
+}
+
+.form-group label {
+    display: block; 
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 95%; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.success-message {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #28a745;
+    color: #28a745;
+    background-color: #d4edda;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.error-message {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    background-color: #f8d7da;
+    border-radius: 4px;
+    text-align: center;
+}
+
+

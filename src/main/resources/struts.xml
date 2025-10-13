@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="global" />
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <interceptors>
+            <interceptor name="authenticationInterceptor" class="com.misgastos.interceptor.AuthenticationInterceptor"/>
+            
+            <interceptor-stack name="secureStack">
+                <interceptor-ref name="authenticationInterceptor"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+
+        <global-results>
+            <result name="login" type="redirect">/login.jsp</result>
+        </global-results>
+
+        <action name="login" class="com.misgastos.action.LoginAction" method="execute">
+            <result name="success" type="redirectAction">inicio</result>
+            <result name="input">/login.jsp</result>
+        </action>
+        <action name="registrarUsuario" class="com.misgastos.action.RegistroAction" method="execute">
+            <result name="success">/login.jsp</result>
+            <result name="input">/registro.jsp</result>
+        </action>
+        <action name="vistaRegistro" class="com.misgastos.action.RegistroAction" method="display">
+            <result name="success">/registro.jsp</result>
+        </action>
+        <action name="logout" class="com.misgastos.action.LogoutAction" method="execute">
+            <result name="success">/login.jsp</result>
+        </action>
+        
+        <action name="inicio" class="com.misgastos.action.RegistroGastoAction" method="input">
+            <interceptor-ref name="secureStack"/>
+            <result name="input">/index.jsp</result>
+        </action>
+        <action name="registrarGasto" class="com.misgastos.action.RegistroGastoAction" method="execute">
+            <interceptor-ref name="secureStack"/>
+            <result name="success" type="redirectAction">inicio</result>
+        </action>
+        <action name="exportarPdf" class="com.misgastos.action.ExportarAction" method="aPdf">
+            <interceptor-ref name="secureStack"/>
+        </action>
+        <action name="exportarExcel" class="com.misgastos.action.ExportarAction" method="aExcel">
+            <interceptor-ref name="secureStack"/>
+        </action>
+        
+        <action name="editarGasto" class="com.misgastos.action.GestionGastoAction" method="editar">
+            <interceptor-ref name="secureStack"/>
+            <result name="success">/editarGasto.jsp</result>
+        </action>
+
+        <action name="actualizarGasto" class="com.misgastos.action.GestionGastoAction" method="actualizar">
+            <interceptor-ref name="secureStack"/>
+            <result name="success" type="redirectAction">inicio</result>
+        </action>
+
+        <action name="eliminarGasto" class="com.misgastos.action.GestionGastoAction" method="eliminar">
+            <interceptor-ref name="secureStack"/>
+            <result name="success" type="redirectAction">inicio</result>
+        </action>
+        
+         <action name="vistaPerfil" class="com.misgastos.action.PerfilAction" method="display">
+            <interceptor-ref name="secureStack"/>
+            <result name="success">/perfil.jsp</result>
+        </action>
+
+        <action name="actualizarPerfil" class="com.misgastos.action.PerfilAction" method="update">
+		    <interceptor-ref name="secureStack"/>
+		    <result name="success" type="redirectAction">
+		        <param name="actionName">vistaPerfil</param>
+		        <param name="profileUpdated">true</param>
+		    </result>
+		</action>
+
+    </package>
+</struts>
