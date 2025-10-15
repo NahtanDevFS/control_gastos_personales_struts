@@ -3,16 +3,22 @@ package com.misgastos.utils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.io.File;
 
 public class ConexionDB {
 
     private static final String NOMBRE_DB = "gastos.db";
+    
+    private static String getDatabasePath() {
+        String homeDir = System.getProperty("user.home");
+        return homeDir + File.separator + NOMBRE_DB;
+    }
 
     public static Connection getConnection() {
         try {
             Class.forName("org.sqlite.JDBC");
             
-            String url = "jdbc:sqlite:" + NOMBRE_DB;
+            String url = "jdbc:sqlite:" + getDatabasePath();
             
             Connection conn = DriverManager.getConnection(url);
             
