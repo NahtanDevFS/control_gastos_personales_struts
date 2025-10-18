@@ -10,7 +10,7 @@
     <s:if test="#session.usuarioLogueado != null">
         <div class="welcome-bar">
             <span>
-                Bienvenido, <strong><s:property value="#session.usuarioLogueado.nombreUsuario"/></strong>!
+                Bienvenido, <strong><s:property value="#session.usuarioLogueado.nombreUsuario"/></strong>
             </span>
             &nbsp;|&nbsp;
             <a href="vistaPerfil.action">Mi Perfil</a>

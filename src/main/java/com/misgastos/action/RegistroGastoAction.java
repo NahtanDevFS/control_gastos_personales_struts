@@ -74,7 +74,6 @@ public class RegistroGastoAction extends ActionSupport implements SessionAware {
         BigDecimal ingreso = getIngresoMensualUsuario();
         BigDecimal gasto = getGastoTotalCalculado();
         
-        // Devuelve la resta
         return ingreso.subtract(gasto);
     }
 
